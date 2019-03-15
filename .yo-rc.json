@@ -1,0 +1,44 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "bieebox.resource.importer",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "5.8.1",
+    "applicationType": "microservice",
+    "baseName": "importer",
+    "packageName": "bieebox.resource.importer",
+    "packageFolder": "bieebox/resource/importer",
+    "serverPort": "8081",
+    "authenticationType": "oauth2",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "YjBjMjkzOGYxZjRkNjVkNGIxMmU0NWRhZTJkNWUzNDk5OGI5NTI1ZjllZTY4Mjg3MGRmNGJhNWFkYWQ2OWQzYjk5MGZiMDU5ZDI0ZGI5MzAzYTMzNTFmODIwZjczNjgwMGM3MmU0NDAyYmEzNTczNDNhZTgwMWFmNzJjYWZjNTk=",
+    "testFrameworks": [
+      "gatling",
+      "cucumber"
+    ],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "clientPackageManager": "npm",
+    "nativeLanguage": "en",
+    "languages": [
+      "en",
+      "my"
+    ],
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}

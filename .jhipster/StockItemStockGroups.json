@@ -1,0 +1,30 @@
+{
+    "name": "StockItemStockGroups",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "stockGroup",
+            "otherEntityName": "stockGroups",
+            "otherEntityField": "stockGroupName",
+            "otherEntityRelationshipName": "stockItemStockGroups"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "stockItem",
+            "otherEntityName": "stockItems",
+            "otherEntityField": "stockItemName",
+            "otherEntityRelationshipName": "stockItemStockGroups"
+        }
+    ],
+    "changelogDate": "20190320040218",
+    "entityTableName": "stock_item_stock_groups",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "importer",
+    "applications": "*",
+    "microserviceName": "importer"
+}

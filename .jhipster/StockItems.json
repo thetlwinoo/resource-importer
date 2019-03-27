@@ -1,0 +1,156 @@
+{
+    "name": "StockItems",
+    "fields": [
+        {
+            "fieldName": "stockItemName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "brand",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "size",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "leadTimeDays",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "quantityPerOuter",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "isChillerStock",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "barcode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "taxRate",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "unitPrice",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "recommendedRetailPrice",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "typicalWeightPerUnit",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "marketingComments",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "internalComments",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "photo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "customFields",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tags",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "searchDetails",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "validFrom",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "validTo",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "product",
+            "otherEntityName": "products",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "stockItem"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "unitPackage",
+            "otherEntityName": "packageTypes",
+            "otherEntityField": "packageTypeName",
+            "otherEntityRelationshipName": "stockItems"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "outerPackage",
+            "otherEntityName": "packageTypes",
+            "otherEntityField": "packageTypeName",
+            "otherEntityRelationshipName": "stockItems"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "supplier",
+            "otherEntityName": "suppliers",
+            "otherEntityField": "supplierName",
+            "otherEntityRelationshipName": "stockItems"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "color",
+            "otherEntityName": "colors",
+            "otherEntityField": "colorName",
+            "otherEntityRelationshipName": "stockItems"
+        }
+    ],
+    "changelogDate": "20190320040212",
+    "entityTableName": "stock_items",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "importer",
+    "applications": "*",
+    "microserviceName": "importer"
+}

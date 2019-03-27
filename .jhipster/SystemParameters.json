@@ -1,0 +1,81 @@
+{
+    "name": "SystemParameters",
+    "fields": [
+        {
+            "fieldName": "deliveryAddressLine1",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "deliveryAddressLine2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "deliveryPostalCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "deliveryLocation",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "postalAddressLine1",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "postalAddressLine2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "postalPostalCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "applicationSettings",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "deliveryCity",
+            "otherEntityName": "cities",
+            "otherEntityField": "cityName",
+            "otherEntityRelationshipName": "systemParameters"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "postalCity",
+            "otherEntityName": "cities",
+            "otherEntityField": "cityName",
+            "otherEntityRelationshipName": "systemParameters"
+        }
+    ],
+    "changelogDate": "20190320040148",
+    "entityTableName": "system_parameters",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "importer",
+    "applications": "*",
+    "microserviceName": "importer"
+}

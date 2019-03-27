@@ -1,0 +1,147 @@
+{
+    "name": "Products",
+    "fields": [
+        {
+            "fieldName": "productName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "makeFlag",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "finishedGoodsFlag",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "color",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "safetyStockLevel",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "reorderPoint",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "standardCost",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "listPrice",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "size",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "weight",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "daysToManufacture",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "productLine",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "classType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "style",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sellStartDate",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "sellEndDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "discontinuedDate",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "productSubCategory",
+            "otherEntityName": "productSubCategory",
+            "otherEntityField": "id",
+            "otherEntityRelationshipName": "products"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "sizeUnitMeasureCode",
+            "otherEntityName": "unitMeasure",
+            "otherEntityField": "unitMeasureCode",
+            "otherEntityRelationshipName": "products"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "weightUnitMeasureCode",
+            "otherEntityName": "unitMeasure",
+            "otherEntityField": "unitMeasureCode",
+            "otherEntityRelationshipName": "products"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "productModel",
+            "otherEntityName": "productModel",
+            "otherEntityField": "productModelName",
+            "otherEntityRelationshipName": "products"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "stockItem",
+            "otherEntityName": "stockItems",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "product"
+        }
+    ],
+    "changelogDate": "20190320040213",
+    "entityTableName": "products",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "importer",
+    "applications": "*",
+    "microserviceName": "importer"
+}

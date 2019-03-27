@@ -1,0 +1,74 @@
+{
+    "name": "PurchaseOrderLines",
+    "fields": [
+        {
+            "fieldName": "orderedOuters",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "receivedOuters",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "expectedUnitPricePerOuter",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "lastReceiptDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "isOrderLineFinalized",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "stockItem",
+            "otherEntityName": "stockItems",
+            "otherEntityField": "stockItemName",
+            "otherEntityRelationshipName": "purchaseOrderLines"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "packageType",
+            "otherEntityName": "packageTypes",
+            "otherEntityField": "packageTypeName",
+            "otherEntityRelationshipName": "purchaseOrderLines"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "purchaseOrder",
+            "otherEntityName": "purchaseOrders",
+            "otherEntityField": "id",
+            "otherEntityRelationshipName": "purchaseOrderLines"
+        }
+    ],
+    "changelogDate": "20190320040157",
+    "entityTableName": "purchase_order_lines",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "importer",
+    "applications": "*",
+    "microserviceName": "importer"
+}

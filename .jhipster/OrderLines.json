@@ -1,0 +1,74 @@
+{
+    "name": "OrderLines",
+    "fields": [
+        {
+            "fieldName": "description",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "quantity",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "unitPrice",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "taxRate",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "pickedQuantity",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "pickingCompletedWhen",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "order",
+            "otherEntityName": "orders",
+            "otherEntityField": "id",
+            "otherEntityRelationshipName": "orderLines"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "packageType",
+            "otherEntityName": "packageTypes",
+            "otherEntityField": "id",
+            "otherEntityRelationshipName": "orderLines"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "stockItem",
+            "otherEntityName": "stockItems",
+            "otherEntityField": "stockItemName",
+            "otherEntityRelationshipName": "orderLines"
+        }
+    ],
+    "changelogDate": "20190320040204",
+    "entityTableName": "order_lines",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "importer",
+    "applications": "*",
+    "microserviceName": "importer"
+}

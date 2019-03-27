@@ -1,0 +1,73 @@
+{
+    "name": "StockItemTransactions",
+    "fields": [
+        {
+            "fieldName": "transactionOccurredWhen",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "quantity",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "customer",
+            "otherEntityName": "customers",
+            "otherEntityField": "customerName",
+            "otherEntityRelationshipName": "stockItemTransactions"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "invoice",
+            "otherEntityName": "invoices",
+            "otherEntityField": "id",
+            "otherEntityRelationshipName": "stockItemTransactions"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "purchaseOrder",
+            "otherEntityName": "purchaseOrders",
+            "otherEntityField": "id",
+            "otherEntityRelationshipName": "stockItemTransactions"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "stockItem",
+            "otherEntityName": "stockItems",
+            "otherEntityField": "stockItemName",
+            "otherEntityRelationshipName": "stockItemTransactions"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "supplier",
+            "otherEntityName": "suppliers",
+            "otherEntityField": "supplierName",
+            "otherEntityRelationshipName": "stockItemTransactions"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "transactionType",
+            "otherEntityName": "transactionTypes",
+            "otherEntityField": "transactionTypeName",
+            "otherEntityRelationshipName": "stockItemTransactions"
+        }
+    ],
+    "changelogDate": "20190320040219",
+    "entityTableName": "stock_item_transactions",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "importer",
+    "applications": "*",
+    "microserviceName": "importer"
+}

@@ -1,0 +1,202 @@
+{
+    "name": "Customers",
+    "fields": [
+        {
+            "fieldName": "customerName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "creditLimit",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "accountOpenedDate",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "standardDiscountPercentage",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "isStatementSent",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "isOnCreditHold",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "paymentDays",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "phoneNumber",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "faxNumber",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "deliveryRun",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "runPosition",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "websiteURL",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "deliveryAddressLine1",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "deliveryAddressLine2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "deliveryPostalCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "deliveryLocation",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "postalAddressLine1",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "postalAddressLine2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "postalPostalCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "validFrom",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "validTo",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "primaryContactPerson",
+            "otherEntityName": "people",
+            "otherEntityField": "fullName",
+            "otherEntityRelationshipName": "customers"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "alternateContactPerson",
+            "otherEntityName": "people",
+            "otherEntityField": "fullName",
+            "otherEntityRelationshipName": "customers"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "customerCategory",
+            "otherEntityName": "customerCategories",
+            "otherEntityField": "customerCategoryName",
+            "otherEntityRelationshipName": "customers"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "buyingGroup",
+            "otherEntityName": "buyingGroups",
+            "otherEntityField": "buyingGroupName",
+            "otherEntityRelationshipName": "customers"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "billToCustomer",
+            "otherEntityName": "customers",
+            "otherEntityField": "customerName",
+            "otherEntityRelationshipName": "customers"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "deliveryCity",
+            "otherEntityName": "cities",
+            "otherEntityField": "cityName",
+            "otherEntityRelationshipName": "customers"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "postalCity",
+            "otherEntityName": "cities",
+            "otherEntityField": "cityName",
+            "otherEntityRelationshipName": "customers"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "deliveryMethod",
+            "otherEntityName": "deliveryMethods",
+            "otherEntityField": "deliveryMethodName",
+            "otherEntityRelationshipName": "customers"
+        }
+    ],
+    "changelogDate": "20190320040200",
+    "entityTableName": "customers",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "importer",
+    "applications": "*",
+    "microserviceName": "importer"
+}

@@ -1,0 +1,85 @@
+{
+    "name": "SpecialDeals",
+    "fields": [
+        {
+            "fieldName": "dealDescription",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "startDate",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "endDate",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "discountAmount",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "discountPercentage",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "unitPrice",
+            "fieldType": "BigDecimal"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "buyingGroup",
+            "otherEntityName": "buyingGroups",
+            "otherEntityField": "buyingGroupName",
+            "otherEntityRelationshipName": "specialDeals"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "customerCategory",
+            "otherEntityName": "customerCategories",
+            "otherEntityField": "customerCategoryName",
+            "otherEntityRelationshipName": "specialDeals"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "customer",
+            "otherEntityName": "customers",
+            "otherEntityField": "customerName",
+            "otherEntityRelationshipName": "specialDeals"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "stockGroup",
+            "otherEntityName": "stockGroups",
+            "otherEntityField": "stockGroupName",
+            "otherEntityRelationshipName": "specialDeals"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "stockItem",
+            "otherEntityName": "stockItems",
+            "otherEntityField": "stockItemName",
+            "otherEntityRelationshipName": "specialDeals"
+        }
+    ],
+    "changelogDate": "20190320040206",
+    "entityTableName": "special_deals",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "importer",
+    "applications": "*",
+    "microserviceName": "importer"
+}

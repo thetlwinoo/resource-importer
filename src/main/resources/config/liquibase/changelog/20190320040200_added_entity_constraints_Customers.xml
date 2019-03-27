@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Customers.
+    -->
+    <changeSet id="20190320040200-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="primary_contact_person_id"
+                                 baseTableName="customers"
+                                 constraintName="fk_customers_primary_contact_person_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="people"/>
+
+        <addForeignKeyConstraint baseColumnNames="alternate_contact_person_id"
+                                 baseTableName="customers"
+                                 constraintName="fk_customers_alternate_contact_person_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="people"/>
+
+        <addForeignKeyConstraint baseColumnNames="customer_category_id"
+                                 baseTableName="customers"
+                                 constraintName="fk_customers_customer_category_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="customer_categories"/>
+
+        <addForeignKeyConstraint baseColumnNames="buying_group_id"
+                                 baseTableName="customers"
+                                 constraintName="fk_customers_buying_group_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="buying_groups"/>
+
+        <addForeignKeyConstraint baseColumnNames="bill_to_customer_id"
+                                 baseTableName="customers"
+                                 constraintName="fk_customers_bill_to_customer_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="customers"/>
+
+        <addForeignKeyConstraint baseColumnNames="delivery_city_id"
+                                 baseTableName="customers"
+                                 constraintName="fk_customers_delivery_city_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="cities"/>
+
+        <addForeignKeyConstraint baseColumnNames="postal_city_id"
+                                 baseTableName="customers"
+                                 constraintName="fk_customers_postal_city_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="cities"/>
+
+        <addForeignKeyConstraint baseColumnNames="delivery_method_id"
+                                 baseTableName="customers"
+                                 constraintName="fk_customers_delivery_method_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="delivery_methods"/>
+
+    </changeSet>
+</databaseChangeLog>

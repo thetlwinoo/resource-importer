@@ -1,0 +1,141 @@
+{
+    "name": "Invoices",
+    "fields": [
+        {
+            "fieldName": "invoiceDate",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "customerPurchaseOrderNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "isCreditNote",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "creditNoteReason",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "comments",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "deliveryInstructions",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "internalComments",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "totalDryItems",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "totalChillerItems",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "deliveryRun",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "runPosition",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "returnedDeliveryData",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "confirmedDeliveryTime",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "confirmedReceivedBy",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "contactPerson",
+            "otherEntityName": "people",
+            "otherEntityField": "fullName",
+            "otherEntityRelationshipName": "invoices"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "salespersonPerson",
+            "otherEntityName": "people",
+            "otherEntityField": "fullName",
+            "otherEntityRelationshipName": "invoices"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "packedByPerson",
+            "otherEntityName": "people",
+            "otherEntityField": "fullName",
+            "otherEntityRelationshipName": "invoices"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "accountsPerson",
+            "otherEntityName": "people",
+            "otherEntityField": "fullName",
+            "otherEntityRelationshipName": "invoices"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "customer",
+            "otherEntityName": "customers",
+            "otherEntityField": "customerName",
+            "otherEntityRelationshipName": "invoices"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "billToCustomer",
+            "otherEntityName": "customers",
+            "otherEntityField": "customerName",
+            "otherEntityRelationshipName": "invoices"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "deliveryMethod",
+            "otherEntityName": "deliveryMethods",
+            "otherEntityField": "deliveryMethodName",
+            "otherEntityRelationshipName": "invoices"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "order",
+            "otherEntityName": "orders",
+            "otherEntityField": "id",
+            "otherEntityRelationshipName": "invoices"
+        }
+    ],
+    "changelogDate": "20190320040203",
+    "entityTableName": "invoices",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "importer",
+    "applications": "*",
+    "microserviceName": "importer"
+}

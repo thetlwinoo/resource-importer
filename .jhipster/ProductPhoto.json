@@ -1,0 +1,44 @@
+{
+    "name": "ProductPhoto",
+    "fields": [
+        {
+            "fieldName": "thumbNailPhoto",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "thumbNailPhotoFileName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "largePhoto",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "largePhotoFileName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "priority",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "product",
+            "otherEntityName": "products",
+            "otherEntityField": "productName",
+            "otherEntityRelationshipName": "productPhoto"
+        }
+    ],
+    "changelogDate": "20190320040216",
+    "entityTableName": "product_photo",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "importer",
+    "applications": "*",
+    "microserviceName": "importer"
+}

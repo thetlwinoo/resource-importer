@@ -1,0 +1,1261 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="thet.lwin (generated)" id="1553072199168-1">
+        <createSequence sequenceName="hibernate_sequence"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-2">
+        <createTable tableName="buying_groups">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="buying_groupsPK"/>
+            </column>
+            <column name="buying_group_name" type="VARCHAR(255)"/>
+            <column name="valid_from" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+            <column name="valid_to" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-3">
+        <createTable tableName="cities">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="citiesPK"/>
+            </column>
+            <column name="city_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="latest_recorded_population" type="BIGINT"/>
+            <column name="location" type="VARCHAR(255)"/>
+            <column name="valid_from" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+            <column name="valid_to" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+            <column name="state_province_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-4">
+        <createTable tableName="cold_room_temperatures">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="cold_room_temperaturesPK"/>
+            </column>
+            <column name="cold_room_sensor_number" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="recorded_when" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+            <column name="temperature" type="numeric(10, 2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="valid_from" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+            <column name="valid_to" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-5">
+        <createTable tableName="colors">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="colorsPK"/>
+            </column>
+            <column name="color_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="valid_from" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+            <column name="valid_to" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-6">
+        <createTable tableName="countries">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="countriesPK"/>
+            </column>
+            <column name="border" type="VARCHAR(255)"/>
+            <column name="continent" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="country_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="country_type" type="VARCHAR(255)"/>
+            <column name="formal_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="iso_aplha_3_code" type="VARCHAR(255)"/>
+            <column name="iso_numeric_code" type="INT"/>
+            <column name="latest_recorded_population" type="BIGINT"/>
+            <column name="region" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="subregion" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="valid_from" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+            <column name="valid_to" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-7">
+        <createTable tableName="customer_categories">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="customer_categoriesPK"/>
+            </column>
+            <column name="customer_category_name" type="VARCHAR(255)"/>
+            <column name="valid_from" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+            <column name="valid_to" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-8">
+        <createTable tableName="customer_transactions">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="customer_transactionsPK"/>
+            </column>
+            <column name="amount_excluding_tax" type="numeric(10, 2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="finalization_date" type="BYTEA"/>
+            <column name="is_finalized" type="BOOLEAN"/>
+            <column name="outstanding_balance" type="numeric(10, 2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="tax_amount" type="numeric(10, 2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="transaction_amount" type="numeric(10, 2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="transaction_date" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+            <column name="customer_id" type="BIGINT"/>
+            <column name="invoice_id" type="BIGINT"/>
+            <column name="payment_method_id" type="BIGINT"/>
+            <column name="transaction_type_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-9">
+        <createTable tableName="customers">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="customersPK"/>
+            </column>
+            <column name="account_opened_date" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+            <column name="credit_limit" type="numeric(10, 2)"/>
+            <column name="customer_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="delivery_address_line_1" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="delivery_address_line_2" type="VARCHAR(255)"/>
+            <column name="delivery_location" type="VARCHAR(255)"/>
+            <column name="delivery_postal_code" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="delivery_run" type="VARCHAR(255)"/>
+            <column name="fax_number" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_on_credit_hold" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_statement_sent" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="payment_days" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="phone_number" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="postal_address_line_1" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="postal_address_line_2" type="VARCHAR(255)"/>
+            <column name="postal_postal_code" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="run_position" type="VARCHAR(255)"/>
+            <column name="standard_discount_percentage" type="numeric(10, 2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="valid_from" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+            <column name="valid_to" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+            <column name="website_url" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="alternate_contact_person_id" type="BIGINT"/>
+            <column name="bill_to_customer_id" type="BIGINT"/>
+            <column name="buying_group_id" type="BIGINT"/>
+            <column name="customer_category_id" type="BIGINT"/>
+            <column name="delivery_city_id" type="BIGINT"/>
+            <column name="delivery_method_id" type="BIGINT"/>
+            <column name="postal_city_id" type="BIGINT"/>
+            <column name="primary_contact_person_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-10">
+        <createTable tableName="delivery_methods">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="delivery_methodsPK"/>
+            </column>
+            <column name="delivery_method_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="valid_from" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+            <column name="valid_to" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-11">
+        <createTable tableName="invoice_lines">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="invoice_linesPK"/>
+            </column>
+            <column name="description" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="extended_price" type="numeric(10, 2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="line_profit" type="numeric(10, 2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="quantity" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="tax_amount" type="numeric(10, 2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="tax_rate" type="numeric(10, 2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="unit_price" type="numeric(10, 2)"/>
+            <column name="invoice_id" type="BIGINT"/>
+            <column name="package_type_id" type="BIGINT"/>
+            <column name="stock_item_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-12">
+        <createTable tableName="invoices">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="invoicesPK"/>
+            </column>
+            <column name="comments" type="VARCHAR(255)"/>
+            <column name="confirmed_delivery_time" type="BYTEA"/>
+            <column name="confirmed_received_by" type="VARCHAR(255)"/>
+            <column name="credit_note_reason" type="VARCHAR(255)"/>
+            <column name="customer_purchase_order_number" type="VARCHAR(255)"/>
+            <column name="delivery_instructions" type="VARCHAR(255)"/>
+            <column name="delivery_run" type="VARCHAR(255)"/>
+            <column name="internal_comments" type="VARCHAR(255)"/>
+            <column name="invoice_date" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_credit_note" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="returned_delivery_data" type="VARCHAR(255)"/>
+            <column name="run_position" type="VARCHAR(255)"/>
+            <column name="total_chiller_items" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="total_dry_items" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="accounts_person_id" type="BIGINT"/>
+            <column name="bill_to_customer_id" type="BIGINT"/>
+            <column name="contact_person_id" type="BIGINT"/>
+            <column name="customer_id" type="BIGINT"/>
+            <column name="delivery_method_id" type="BIGINT"/>
+            <column name="order_id" type="BIGINT"/>
+            <column name="packed_by_person_id" type="BIGINT"/>
+            <column name="salesperson_person_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-13">
+        <createTable tableName="jhi_authority">
+            <column name="name" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-14">
+        <createTable tableName="jhi_persistent_audit_event">
+            <column autoIncrement="true" name="event_id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="jhi_persistent_audit_eventPK"/>
+            </column>
+            <column name="event_date" type="BYTEA"/>
+            <column name="event_type" type="VARCHAR(255)"/>
+            <column name="principal" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-15">
+        <createTable tableName="jhi_persistent_audit_evt_data">
+            <column name="event_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="value" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-16">
+        <createTable tableName="jhi_user">
+            <column name="id" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="BYTEA"/>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="BYTEA"/>
+            <column name="activated" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="email" type="VARCHAR(254)"/>
+            <column name="first_name" type="VARCHAR(50)"/>
+            <column name="image_url" type="VARCHAR(256)"/>
+            <column name="lang_key" type="VARCHAR(6)"/>
+            <column name="last_name" type="VARCHAR(50)"/>
+            <column name="login" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-17">
+        <createTable tableName="jhi_user_authority">
+            <column name="user_id" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="authority_name" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-18">
+        <createTable tableName="order_lines">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="order_linesPK"/>
+            </column>
+            <column name="description" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="picked_quantity" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="picking_completed_when" type="BYTEA"/>
+            <column name="quantity" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="tax_rate" type="numeric(10, 2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="unit_price" type="numeric(10, 2)"/>
+            <column name="order_id" type="BIGINT"/>
+            <column name="package_type_id" type="BIGINT"/>
+            <column name="stock_item_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-19">
+        <createTable tableName="orders">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="ordersPK"/>
+            </column>
+            <column name="comments" type="VARCHAR(255)"/>
+            <column name="customer_purchase_order_number" type="VARCHAR(255)"/>
+            <column name="delivery_instructions" type="VARCHAR(255)"/>
+            <column name="expected_delivery_date" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+            <column name="internal_comments" type="VARCHAR(255)"/>
+            <column name="is_undersupply_backordered" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="order_date" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+            <column name="picking_completed_when" type="BYTEA"/>
+            <column name="backorder_order_id" type="BIGINT"/>
+            <column name="contact_person_id" type="BIGINT"/>
+            <column name="customer_id" type="BIGINT"/>
+            <column name="picked_by_person_id" type="BIGINT"/>
+            <column name="salesperson_person_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-20">
+        <createTable tableName="package_types">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="package_typesPK"/>
+            </column>
+            <column name="package_type_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="valid_from" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+            <column name="valid_to" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-21">
+        <createTable tableName="payment_methods">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="payment_methodsPK"/>
+            </column>
+            <column name="payment_method_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="valid_from" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+            <column name="valid_to" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-22">
+        <createTable tableName="people">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="peoplePK"/>
+            </column>
+            <column name="custom_fields" type="VARCHAR(255)"/>
+            <column name="email_address" type="VARCHAR(255)"/>
+            <column name="fax_number" type="VARCHAR(255)"/>
+            <column name="full_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="hashed_password" type="VARCHAR(255)"/>
+            <column name="is_employee" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_external_logon_provider" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_permitted_to_logon" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_sales_person" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_system_user" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="logon_name" type="VARCHAR(255)"/>
+            <column name="other_languages" type="VARCHAR(255)"/>
+            <column name="phone_number" type="VARCHAR(255)"/>
+            <column name="photo" type="VARCHAR(255)"/>
+            <column name="preferred_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="search_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_preferences" type="VARCHAR(255)"/>
+            <column name="valid_from" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+            <column name="valid_to" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-23">
+        <createTable tableName="product_category">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="product_categoryPK"/>
+            </column>
+            <column name="product_category_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-24">
+        <createTable tableName="product_model">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="product_modelPK"/>
+            </column>
+            <column name="calalog_description" type="VARCHAR(255)"/>
+            <column name="instructions" type="VARCHAR(255)"/>
+            <column name="product_model_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-25">
+        <createTable tableName="product_photo">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="product_photoPK"/>
+            </column>
+            <column name="large_photo" type="VARCHAR(255)"/>
+            <column name="large_photo_file_name" type="VARCHAR(255)"/>
+            <column name="thumb_nail_photo" type="VARCHAR(255)"/>
+            <column name="thumb_nail_photo_file_name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-26">
+        <createTable tableName="product_product_photo">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="product_product_photoPK"/>
+            </column>
+            <column name="first_priority" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fixth_priority" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fourth_priority" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="second_priority" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="sixth_priority" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="third_priority" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="product_id" type="BIGINT"/>
+            <column name="product_photo_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-27">
+        <createTable tableName="product_sub_category">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="product_sub_categoryPK"/>
+            </column>
+            <column name="product_sub_category_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="product_category_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-28">
+        <createTable tableName="products">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="productsPK"/>
+            </column>
+            <column name="class_type" type="VARCHAR(255)"/>
+            <column name="color" type="VARCHAR(255)"/>
+            <column name="days_to_manufacture" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="discontinued_date" type="BYTEA"/>
+            <column name="finished_goods_flag" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="list_price" type="numeric(10, 2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="make_flag" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="product_line" type="VARCHAR(255)"/>
+            <column name="product_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="reorder_point" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="safety_stock_level" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="sell_end_date" type="BYTEA"/>
+            <column name="sell_start_date" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+            <column name="jhi_size" type="VARCHAR(255)"/>
+            <column name="standard_cost" type="numeric(10, 2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="style" type="VARCHAR(255)"/>
+            <column name="weight" type="numeric(10, 2)"/>
+            <column name="product_model_id" type="BIGINT"/>
+            <column name="product_sub_category_id" type="BIGINT"/>
+            <column name="size_unit_measure_code_id" type="BIGINT"/>
+            <column name="weight_unit_measure_code_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-29">
+        <createTable tableName="purchase_order_lines">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="purchase_order_linesPK"/>
+            </column>
+            <column name="description" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="expected_unit_price_per_outer" type="numeric(10, 2)"/>
+            <column name="is_order_line_finalized" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_receipt_date" type="BYTEA"/>
+            <column name="ordered_outers" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="received_outers" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="package_type_id" type="BIGINT"/>
+            <column name="purchase_order_id" type="BIGINT"/>
+            <column name="stock_item_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-30">
+        <createTable tableName="purchase_orders">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="purchase_ordersPK"/>
+            </column>
+            <column name="comments" type="VARCHAR(255)"/>
+            <column name="expected_delivery_date" type="BYTEA"/>
+            <column name="internal_comments" type="VARCHAR(255)"/>
+            <column name="is_order_finalized" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="order_date" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+            <column name="supplier_reference" type="VARCHAR(255)"/>
+            <column name="contact_person_id" type="BIGINT"/>
+            <column name="delivery_method_id" type="BIGINT"/>
+            <column name="supplier_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-31">
+        <createTable tableName="special_deals">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="special_dealsPK"/>
+            </column>
+            <column name="deal_description" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="discount_amount" type="numeric(10, 2)"/>
+            <column name="discount_percentage" type="FLOAT4"/>
+            <column name="end_date" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+            <column name="start_date" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+            <column name="unit_price" type="numeric(10, 2)"/>
+            <column name="buying_group_id" type="BIGINT"/>
+            <column name="customer_id" type="BIGINT"/>
+            <column name="customer_category_id" type="BIGINT"/>
+            <column name="stock_group_id" type="BIGINT"/>
+            <column name="stock_item_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-32">
+        <createTable tableName="state_provinces">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="state_provincesPK"/>
+            </column>
+            <column name="border" type="VARCHAR(255)"/>
+            <column name="latest_recorded_population" type="BIGINT"/>
+            <column name="sales_territory" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="state_province_code" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="state_province_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="valid_from" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+            <column name="valid_to" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+            <column name="country_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-33">
+        <createTable tableName="stock_groups">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="stock_groupsPK"/>
+            </column>
+            <column name="stock_group_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="valid_from" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+            <column name="valid_to" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-34">
+        <createTable tableName="stock_item_holdings">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="stock_item_holdingsPK"/>
+            </column>
+            <column name="bin_location" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_cost_price" type="numeric(10, 2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_stocktake_quantity" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="quantity_on_hand" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="reorder_level" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="targer_stock_level" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="stock_item_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-35">
+        <createTable tableName="stock_item_stock_groups">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="stock_item_stock_groupsPK"/>
+            </column>
+            <column name="stock_group_id" type="BIGINT"/>
+            <column name="stock_item_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-36">
+        <createTable tableName="stock_item_transactions">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="stock_item_transactionsPK"/>
+            </column>
+            <column name="quantity" type="numeric(10, 2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="transaction_occurred_when" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+            <column name="customer_id" type="BIGINT"/>
+            <column name="invoice_id" type="BIGINT"/>
+            <column name="purchase_order_id" type="BIGINT"/>
+            <column name="stock_item_id" type="BIGINT"/>
+            <column name="supplier_id" type="BIGINT"/>
+            <column name="transaction_type_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-37">
+        <createTable tableName="stock_items">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="stock_itemsPK"/>
+            </column>
+            <column name="barcode" type="VARCHAR(255)"/>
+            <column name="brand" type="VARCHAR(255)"/>
+            <column name="custom_fields" type="VARCHAR(255)"/>
+            <column name="internal_comments" type="VARCHAR(255)"/>
+            <column name="is_chiller_stock" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="lead_time_days" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="marketing_comments" type="VARCHAR(255)"/>
+            <column name="photo" type="VARCHAR(255)"/>
+            <column name="quantity_per_outer" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="recommended_retail_price" type="numeric(10, 2)"/>
+            <column name="search_details" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="jhi_size" type="VARCHAR(255)"/>
+            <column name="stock_item_name" type="VARCHAR(255)"/>
+            <column name="tags" type="VARCHAR(255)"/>
+            <column name="tax_rate" type="numeric(10, 2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="typical_weight_per_unit" type="numeric(10, 2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="unit_price" type="numeric(10, 2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="valid_from" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+            <column name="valid_to" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+            <column name="color_id" type="BIGINT"/>
+            <column name="outer_package_id" type="BIGINT"/>
+            <column name="product_id" type="BIGINT"/>
+            <column name="supplier_id" type="BIGINT"/>
+            <column name="unit_package_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-38">
+        <createTable tableName="supplier_categories">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="supplier_categoriesPK"/>
+            </column>
+            <column name="supplier_category_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="valid_from" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+            <column name="valid_to" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-39">
+        <createTable tableName="supplier_transactions">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="supplier_transactionsPK"/>
+            </column>
+            <column name="amount_excluding_tax" type="numeric(10, 2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="finalization_date" type="BYTEA"/>
+            <column name="is_finalized" type="BOOLEAN"/>
+            <column name="outstanding_balance" type="numeric(10, 2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="supplier_invoice_number" type="VARCHAR(255)"/>
+            <column name="tax_amount" type="numeric(10, 2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="transaction_amount" type="numeric(10, 2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="transaction_date" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+            <column name="payment_method_id" type="BIGINT"/>
+            <column name="purchase_order_id" type="BIGINT"/>
+            <column name="supplier_id" type="BIGINT"/>
+            <column name="transaction_type_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-40">
+        <createTable tableName="suppliers">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="suppliersPK"/>
+            </column>
+            <column name="bank_account_branch" type="VARCHAR(255)"/>
+            <column name="bank_account_code" type="VARCHAR(255)"/>
+            <column name="bank_account_name" type="VARCHAR(255)"/>
+            <column name="bank_account_number" type="VARCHAR(255)"/>
+            <column name="bank_international_code" type="VARCHAR(255)"/>
+            <column name="delivery_address_line_1" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="delivery_address_line_2" type="VARCHAR(255)"/>
+            <column name="delivery_location" type="VARCHAR(255)"/>
+            <column name="delivery_postal_code" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fax_number" type="VARCHAR(255)"/>
+            <column name="internal_comments" type="VARCHAR(255)"/>
+            <column name="payment_days" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="phone_number" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="postal_address_line_1" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="postal_address_line_2" type="VARCHAR(255)"/>
+            <column name="postal_postal_code" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="supplier_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="supplier_reference" type="VARCHAR(255)"/>
+            <column name="valid_from" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+            <column name="valid_to" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+            <column name="website_url" type="VARCHAR(255)"/>
+            <column name="alternate_contact_person_id" type="BIGINT"/>
+            <column name="delivery_city_id" type="BIGINT"/>
+            <column name="delivery_method_id" type="BIGINT"/>
+            <column name="postal_city_id" type="BIGINT"/>
+            <column name="primary_contact_person_id" type="BIGINT"/>
+            <column name="supplier_category_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-41">
+        <createTable tableName="system_parameters">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="system_parametersPK"/>
+            </column>
+            <column name="application_settings" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="delivery_address_line_1" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="delivery_address_line_2" type="VARCHAR(255)"/>
+            <column name="delivery_location" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="delivery_postal_code" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="postal_address_line_1" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="postal_address_line_2" type="VARCHAR(255)"/>
+            <column name="postal_postal_code" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="delivery_city_id" type="BIGINT"/>
+            <column name="postal_city_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-42">
+        <createTable tableName="transaction_types">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="transaction_typesPK"/>
+            </column>
+            <column name="transaction_type_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="valid_from" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+            <column name="valid_to" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-43">
+        <createTable tableName="unit_measure">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="unit_measurePK"/>
+            </column>
+            <column name="unit_measure_code" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="unit_measure_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-44">
+        <createTable tableName="vehicle_temperatures">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="vehicle_temperaturesPK"/>
+            </column>
+            <column name="chiller_sensor_number" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="compressed_sensor_data" type="VARCHAR(255)"/>
+            <column name="full_sensor_data" type="VARCHAR(255)"/>
+            <column name="is_compressed" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="recorded_when" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="temperature" type="numeric(10, 2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="vehicle_registration" type="INT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-45">
+        <addPrimaryKey columnNames="event_id, name" tableName="jhi_persistent_audit_evt_data"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-46">
+        <addPrimaryKey columnNames="user_id, authority_name" tableName="jhi_user_authority"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-47">
+        <addPrimaryKey columnNames="name" constraintName="jhi_authorityPK" tableName="jhi_authority"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-48">
+        <addPrimaryKey columnNames="id" constraintName="jhi_userPK" tableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-49">
+        <addUniqueConstraint columnNames="email" constraintName="UC_JHI_USEREMAIL_COL" tableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-50">
+        <addUniqueConstraint columnNames="login" constraintName="UC_JHI_USERLOGIN_COL" tableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-51">
+        <addUniqueConstraint columnNames="product_id" constraintName="UC_STOCK_ITEMSPRODUCT_ID_COL" tableName="stock_items"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-52">
+        <addForeignKeyConstraint baseColumnNames="backorder_order_id" baseTableName="orders" constraintName="FK13d1jbelv4lhq4ay7e9boj2vs" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="orders"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-53">
+        <addForeignKeyConstraint baseColumnNames="supplier_category_id" baseTableName="suppliers" constraintName="FK15ennrtsq71w38v51iyryvlts" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="supplier_categories"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-54">
+        <addForeignKeyConstraint baseColumnNames="product_category_id" baseTableName="product_sub_category" constraintName="FK1n6k1t52xs6uvcnnwuuu3qf0d" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="product_category"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-55">
+        <addForeignKeyConstraint baseColumnNames="contact_person_id" baseTableName="orders" constraintName="FK1rwixw0m7w6cpj92ctb6j265q" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="people"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-56">
+        <addForeignKeyConstraint baseColumnNames="order_id" baseTableName="order_lines" constraintName="FK1smc0s578t2oih21yn9hw6usr" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="orders"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-57">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="jhi_user_authority" constraintName="FK290okww5jujghp4el5i7mgwu0" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-58">
+        <addForeignKeyConstraint baseColumnNames="product_id" baseTableName="stock_items" constraintName="FK2ak4gvkbwq1m0w2ys4xodtb2p" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="products"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-59">
+        <addForeignKeyConstraint baseColumnNames="event_id" baseTableName="jhi_persistent_audit_evt_data" constraintName="FK2ehnyx2si4tjd2nt4q7y40v8m" deferrable="false" initiallyDeferred="false" referencedColumnNames="event_id" referencedTableName="jhi_persistent_audit_event"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-60">
+        <addForeignKeyConstraint baseColumnNames="postal_city_id" baseTableName="customers" constraintName="FK2xchx7k4ww28qaywr3ejwjehk" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="cities"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-61">
+        <addForeignKeyConstraint baseColumnNames="package_type_id" baseTableName="purchase_order_lines" constraintName="FK438b6nb7vydj0nmm8bvnokgsf" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="package_types"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-62">
+        <addForeignKeyConstraint baseColumnNames="size_unit_measure_code_id" baseTableName="products" constraintName="FK4jsxi4g0j7254chj6on5vi9mi" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="unit_measure"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-63">
+        <addForeignKeyConstraint baseColumnNames="order_id" baseTableName="invoices" constraintName="FK4ko3y00tkkk2ya3p6wnefjj2f" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="orders"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-64">
+        <addForeignKeyConstraint baseColumnNames="authority_name" baseTableName="jhi_user_authority" constraintName="FK4psxl0jtx6nr7rhqbynr6itoc" deferrable="false" initiallyDeferred="false" referencedColumnNames="name" referencedTableName="jhi_authority"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-65">
+        <addForeignKeyConstraint baseColumnNames="accounts_person_id" baseTableName="invoices" constraintName="FK4sbosrlarqykaiscererkpoyh" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="people"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-66">
+        <addForeignKeyConstraint baseColumnNames="payment_method_id" baseTableName="customer_transactions" constraintName="FK57rjkmgyxtyl0krpswgjki35x" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="payment_methods"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-67">
+        <addForeignKeyConstraint baseColumnNames="salesperson_person_id" baseTableName="invoices" constraintName="FK5g9qqtmpos53ffjksoqq4uioo" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="people"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-68">
+        <addForeignKeyConstraint baseColumnNames="packed_by_person_id" baseTableName="invoices" constraintName="FK627trqcvle8awtrpl11mgqhq9" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="people"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-69">
+        <addForeignKeyConstraint baseColumnNames="buying_group_id" baseTableName="special_deals" constraintName="FK67p2826gxijd8h0h7j69alws8" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="buying_groups"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-70">
+        <addForeignKeyConstraint baseColumnNames="primary_contact_person_id" baseTableName="customers" constraintName="FK6g3hx44thuc75bygiabo0pui8" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="people"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-71">
+        <addForeignKeyConstraint baseColumnNames="alternate_contact_person_id" baseTableName="suppliers" constraintName="FK6hngb9f1sfk8kq5hmty43gu0b" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="people"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-72">
+        <addForeignKeyConstraint baseColumnNames="salesperson_person_id" baseTableName="orders" constraintName="FK7wxawuhm8qpoqwkj9fp0junjw" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="people"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-73">
+        <addForeignKeyConstraint baseColumnNames="package_type_id" baseTableName="invoice_lines" constraintName="FK8d1yri5dsaneliy9ke41h5mw1" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="package_types"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-74">
+        <addForeignKeyConstraint baseColumnNames="product_sub_category_id" baseTableName="products" constraintName="FK8u6na7ov65iquim0vqhe4plyk" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="product_sub_category"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-75">
+        <addForeignKeyConstraint baseColumnNames="stock_item_id" baseTableName="order_lines" constraintName="FK8vatmgboyq8uekolfjph69hyk" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="stock_items"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-76">
+        <addForeignKeyConstraint baseColumnNames="weight_unit_measure_code_id" baseTableName="products" constraintName="FK93uehjp7ah7mcbj6oed90l6ms" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="unit_measure"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-77">
+        <addForeignKeyConstraint baseColumnNames="invoice_id" baseTableName="stock_item_transactions" constraintName="FKb495ivlbm921a8c6sxjn7bmpl" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="invoices"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-78">
+        <addForeignKeyConstraint baseColumnNames="postal_city_id" baseTableName="suppliers" constraintName="FKb6ye0ypvwxehryq63sli8nry5" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="cities"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-79">
+        <addForeignKeyConstraint baseColumnNames="product_id" baseTableName="product_product_photo" constraintName="FKbiqp3kov3fsmrjgcf1i8m3kno" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="products"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-80">
+        <addForeignKeyConstraint baseColumnNames="delivery_city_id" baseTableName="suppliers" constraintName="FKbomkrfghv1ijfl0wqorkfr6e2" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="cities"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-81">
+        <addForeignKeyConstraint baseColumnNames="buying_group_id" baseTableName="customers" constraintName="FKc29dqg15n8jado79gpn32moty" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="buying_groups"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-82">
+        <addForeignKeyConstraint baseColumnNames="stock_item_id" baseTableName="stock_item_stock_groups" constraintName="FKchexa0f8ptewt33a8v95sbuea" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="stock_items"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-83">
+        <addForeignKeyConstraint baseColumnNames="transaction_type_id" baseTableName="stock_item_transactions" constraintName="FKcn6xntu6h9xvb2anluaxj2xab" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="transaction_types"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-84">
+        <addForeignKeyConstraint baseColumnNames="stock_group_id" baseTableName="stock_item_stock_groups" constraintName="FKcx0wktqp2oj6o0pwsui7eadr0" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="stock_groups"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-85">
+        <addForeignKeyConstraint baseColumnNames="stock_group_id" baseTableName="special_deals" constraintName="FKd2s1b6xat7pklgc6olbfqfcl3" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="stock_groups"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-86">
+        <addForeignKeyConstraint baseColumnNames="alternate_contact_person_id" baseTableName="customers" constraintName="FKddgb1uurqnqfdf2da7bary2b7" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="people"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-87">
+        <addForeignKeyConstraint baseColumnNames="delivery_city_id" baseTableName="system_parameters" constraintName="FKe1lvsx4uktid82bgay9ut7fn0" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="cities"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-88">
+        <addForeignKeyConstraint baseColumnNames="stock_item_id" baseTableName="stock_item_holdings" constraintName="FKe4ubw1kabm9fwdfc2x5py17cx" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="stock_items"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-89">
+        <addForeignKeyConstraint baseColumnNames="customer_category_id" baseTableName="special_deals" constraintName="FKeu6vay7edk1luuw36xgasbdjl" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="customer_categories"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-90">
+        <addForeignKeyConstraint baseColumnNames="package_type_id" baseTableName="order_lines" constraintName="FKexg80kmd4tv6sc5dctfqlhq5q" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="package_types"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-91">
+        <addForeignKeyConstraint baseColumnNames="stock_item_id" baseTableName="stock_item_transactions" constraintName="FKf2w3iawe80lg722sftswih3pu" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="stock_items"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-92">
+        <addForeignKeyConstraint baseColumnNames="customer_id" baseTableName="customer_transactions" constraintName="FKf6uhn6t89eoibfftk16t1ndq9" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="customers"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-93">
+        <addForeignKeyConstraint baseColumnNames="product_photo_id" baseTableName="product_product_photo" constraintName="FKf7w4rilva2rpj0gi39vy69b1f" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="product_photo"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-94">
+        <addForeignKeyConstraint baseColumnNames="transaction_type_id" baseTableName="supplier_transactions" constraintName="FKgrs54u9ymrnui6h4j5kej8itf" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="transaction_types"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-95">
+        <addForeignKeyConstraint baseColumnNames="purchase_order_id" baseTableName="stock_item_transactions" constraintName="FKgudrem6actv6qkdj54wbvh3uu" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="purchase_orders"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-96">
+        <addForeignKeyConstraint baseColumnNames="supplier_id" baseTableName="supplier_transactions" constraintName="FKgxby8pa002t03a5ogl38kqmpa" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="suppliers"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-97">
+        <addForeignKeyConstraint baseColumnNames="customer_id" baseTableName="stock_item_transactions" constraintName="FKh8k6s1if39r1h2ba5qhx088a7" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="customers"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-98">
+        <addForeignKeyConstraint baseColumnNames="supplier_id" baseTableName="stock_item_transactions" constraintName="FKhlw0tcc3me2pi5ndumdqsh8sa" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="suppliers"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-99">
+        <addForeignKeyConstraint baseColumnNames="customer_id" baseTableName="special_deals" constraintName="FKi1uqh83cc5qcvtnfnlawcuy49" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="customers"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-100">
+        <addForeignKeyConstraint baseColumnNames="transaction_type_id" baseTableName="customer_transactions" constraintName="FKica1m0ly0clds084e500tx48k" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="transaction_types"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-101">
+        <addForeignKeyConstraint baseColumnNames="contact_person_id" baseTableName="purchase_orders" constraintName="FKiejeep681qoij0n4i4vrl816r" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="people"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-102">
+        <addForeignKeyConstraint baseColumnNames="delivery_method_id" baseTableName="purchase_orders" constraintName="FKiwq0xptswa5a27kvpx18imf4a" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="delivery_methods"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-103">
+        <addForeignKeyConstraint baseColumnNames="product_model_id" baseTableName="products" constraintName="FKj5awf4r8jjko7waqsyrwo8ule" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="product_model"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-104">
+        <addForeignKeyConstraint baseColumnNames="purchase_order_id" baseTableName="supplier_transactions" constraintName="FKjb4s0vc7o9rk44q0111v6qf2u" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="purchase_orders"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-105">
+        <addForeignKeyConstraint baseColumnNames="primary_contact_person_id" baseTableName="suppliers" constraintName="FKjgrmjmo7n8apnrqeovx1p8kd5" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="people"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-106">
+        <addForeignKeyConstraint baseColumnNames="color_id" baseTableName="stock_items" constraintName="FKkehsre0y2u5h2hvgiftq5kkyq" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="colors"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-107">
+        <addForeignKeyConstraint baseColumnNames="delivery_city_id" baseTableName="customers" constraintName="FKko9c1xl4gjn9sp6ot07ou9m2r" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="cities"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-108">
+        <addForeignKeyConstraint baseColumnNames="stock_item_id" baseTableName="special_deals" constraintName="FKkteri8eb2wknqs6r2d7xi5308" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="stock_items"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-109">
+        <addForeignKeyConstraint baseColumnNames="bill_to_customer_id" baseTableName="invoices" constraintName="FKl6nf4ohmgtktl89xl5ci9venr" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="customers"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-110">
+        <addForeignKeyConstraint baseColumnNames="state_province_id" baseTableName="cities" constraintName="FKl6wchna77065nto7rlq306fle" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="state_provinces"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-111">
+        <addForeignKeyConstraint baseColumnNames="contact_person_id" baseTableName="invoices" constraintName="FKlgq87tkn1idk1x5sk90erbqas" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="people"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-112">
+        <addForeignKeyConstraint baseColumnNames="purchase_order_id" baseTableName="purchase_order_lines" constraintName="FKlm5ieywqw1p1l4oxnkup8j2m6" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="purchase_orders"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-113">
+        <addForeignKeyConstraint baseColumnNames="stock_item_id" baseTableName="invoice_lines" constraintName="FKlm7up03xc6uracjg69ns05bw0" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="stock_items"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-114">
+        <addForeignKeyConstraint baseColumnNames="unit_package_id" baseTableName="stock_items" constraintName="FKls515wkyo5hqfkem8junx6yk2" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="package_types"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-115">
+        <addForeignKeyConstraint baseColumnNames="outer_package_id" baseTableName="stock_items" constraintName="FKm8ti5vkq23thk3yfx5uwmkj20" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="package_types"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-116">
+        <addForeignKeyConstraint baseColumnNames="country_id" baseTableName="state_provinces" constraintName="FKmn2wjyjr1qh20a1umc2co1aoq" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="countries"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-117">
+        <addForeignKeyConstraint baseColumnNames="delivery_method_id" baseTableName="suppliers" constraintName="FKnjqm9c22npmopsjevkfdkhap" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="delivery_methods"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-118">
+        <addForeignKeyConstraint baseColumnNames="delivery_method_id" baseTableName="customers" constraintName="FKojgeaw4k9jvxbynipx5vyglik" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="delivery_methods"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-119">
+        <addForeignKeyConstraint baseColumnNames="stock_item_id" baseTableName="purchase_order_lines" constraintName="FKojusvn1ypuhsdr7w65soctwbj" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="stock_items"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-120">
+        <addForeignKeyConstraint baseColumnNames="customer_id" baseTableName="orders" constraintName="FKpxtb8awmi0dk6smoh2vp1litg" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="customers"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-121">
+        <addForeignKeyConstraint baseColumnNames="customer_id" baseTableName="invoices" constraintName="FKq2w4hmh6l9othnp6cepp0cfe2" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="customers"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-122">
+        <addForeignKeyConstraint baseColumnNames="postal_city_id" baseTableName="system_parameters" constraintName="FKqnwu4ax7m70ks1pufqt35i5g8" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="cities"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-123">
+        <addForeignKeyConstraint baseColumnNames="picked_by_person_id" baseTableName="orders" constraintName="FKriwd7x00b0jvvlfgcoro1e6vm" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="people"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-124">
+        <addForeignKeyConstraint baseColumnNames="supplier_id" baseTableName="purchase_orders" constraintName="FKrpdasmb8y8xs5tiy4369xpinq" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="suppliers"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-125">
+        <addForeignKeyConstraint baseColumnNames="payment_method_id" baseTableName="supplier_transactions" constraintName="FKrvvxngpjg3ciylpw3g7inh6em" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="payment_methods"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-126">
+        <addForeignKeyConstraint baseColumnNames="invoice_id" baseTableName="customer_transactions" constraintName="FKs9eylgmj7e3m06bo7wqk7e06l" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="invoices"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-127">
+        <addForeignKeyConstraint baseColumnNames="bill_to_customer_id" baseTableName="customers" constraintName="FKsd7592dj57v6gu5g004kfpfci" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="customers"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-128">
+        <addForeignKeyConstraint baseColumnNames="invoice_id" baseTableName="invoice_lines" constraintName="FKsgudq2lwpa9wc92a23nggah1w" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="invoices"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-129">
+        <addForeignKeyConstraint baseColumnNames="customer_category_id" baseTableName="customers" constraintName="FKt1ploul2bksdg30penr97eb98" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="customer_categories"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-130">
+        <addForeignKeyConstraint baseColumnNames="supplier_id" baseTableName="stock_items" constraintName="FKtikr99gpj0rvlfykq7kqhhm3x" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="suppliers"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553072199168-131">
+        <addForeignKeyConstraint baseColumnNames="delivery_method_id" baseTableName="invoices" constraintName="FKxhkhv14lnrmq8ywbsm4xctl3" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="delivery_methods"/>
+    </changeSet>
+</databaseChangeLog>

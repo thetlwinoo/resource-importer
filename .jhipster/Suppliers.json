@@ -1,0 +1,170 @@
+{
+    "name": "Suppliers",
+    "fields": [
+        {
+            "fieldName": "supplierName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "supplierReference",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "bankAccountName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "bankAccountBranch",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "bankAccountCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "bankAccountNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "bankInternationalCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "paymentDays",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "internalComments",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "phoneNumber",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "faxNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "websiteURL",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "deliveryAddressLine1",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "deliveryAddressLine2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "deliveryPostalCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "deliveryLocation",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "postalAddressLine1",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "postalAddressLine2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "postalPostalCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "validFrom",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "validTo",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "primaryContactPerson",
+            "otherEntityName": "people",
+            "otherEntityField": "fullName",
+            "otherEntityRelationshipName": "suppliers"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "alternateContactPerson",
+            "otherEntityName": "people",
+            "otherEntityField": "fullName",
+            "otherEntityRelationshipName": "suppliers"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "supplierCategory",
+            "otherEntityName": "supplierCategories",
+            "otherEntityField": "supplierCategoryName",
+            "otherEntityRelationshipName": "suppliers"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "deliveryMethod",
+            "otherEntityName": "deliveryMethods",
+            "otherEntityField": "deliveryMethodName",
+            "otherEntityRelationshipName": "suppliers"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "deliveryCity",
+            "otherEntityName": "cities",
+            "otherEntityField": "cityName",
+            "otherEntityRelationshipName": "suppliers"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "postalCity",
+            "otherEntityName": "cities",
+            "otherEntityField": "cityName",
+            "otherEntityRelationshipName": "suppliers"
+        }
+    ],
+    "changelogDate": "20190320040154",
+    "entityTableName": "suppliers",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "importer",
+    "applications": "*",
+    "microserviceName": "importer"
+}

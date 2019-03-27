@@ -43,9 +43,9 @@ spring:
             indent-output: true
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:postgresql://localhost:5432/importer
-        username: importer
-        password:
+        url: jdbc:postgresql://localhost:5432/bieebox
+        username: postgres
+        password: Passw0rd
         hikari:
             poolName: Hikari
             auto-commit: false

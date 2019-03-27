@@ -1,0 +1,53 @@
+{
+    "name": "Cities",
+    "fields": [
+        {
+            "fieldName": "cityName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "location",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "latestRecordedPopulation",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "validFrom",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "validTo",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "stateProvince",
+            "otherEntityName": "stateProvinces",
+            "otherEntityField": "stateProvinceName",
+            "otherEntityRelationshipName": "cities"
+        }
+    ],
+    "changelogDate": "20190320040147",
+    "entityTableName": "cities",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "importer",
+    "applications": "*",
+    "microserviceName": "importer"
+}

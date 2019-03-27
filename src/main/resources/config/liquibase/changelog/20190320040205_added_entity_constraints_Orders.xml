@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Orders.
+    -->
+    <changeSet id="20190320040205-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="picked_by_person_id"
+                                 baseTableName="orders"
+                                 constraintName="fk_orders_picked_by_person_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="people"/>
+
+        <addForeignKeyConstraint baseColumnNames="contact_person_id"
+                                 baseTableName="orders"
+                                 constraintName="fk_orders_contact_person_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="people"/>
+
+        <addForeignKeyConstraint baseColumnNames="salesperson_person_id"
+                                 baseTableName="orders"
+                                 constraintName="fk_orders_salesperson_person_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="people"/>
+
+        <addForeignKeyConstraint baseColumnNames="customer_id"
+                                 baseTableName="orders"
+                                 constraintName="fk_orders_customer_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="customers"/>
+
+        <addForeignKeyConstraint baseColumnNames="backorder_order_id"
+                                 baseTableName="orders"
+                                 constraintName="fk_orders_backorder_order_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="orders"/>
+
+    </changeSet>
+</databaseChangeLog>

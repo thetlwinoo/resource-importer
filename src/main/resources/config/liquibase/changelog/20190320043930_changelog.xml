@@ -1,0 +1,60 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="thet.lwin (generated)" id="1553056807867-1">
+        <createTable tableName="product_model">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="product_modelPK"/>
+            </column>
+            <column name="calalog_description" type="VARCHAR(255)"/>
+            <column name="instructions" type="VARCHAR(255)"/>
+            <column name="product_model_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553056807867-2">
+        <createTable tableName="unit_measure">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="unit_measurePK"/>
+            </column>
+            <column name="unit_measure_code" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="unit_measure_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553056807867-3">
+        <addColumn tableName="product_product_photo">
+            <column name="product_id" type="int8"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553056807867-4">
+        <addColumn tableName="products">
+            <column name="product_model_id" type="int8"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553056807867-5">
+        <addColumn tableName="products">
+            <column name="size_unit_measure_code_id" type="int8"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553056807867-6">
+        <addColumn tableName="products">
+            <column name="weight_unit_measure_code_id" type="int8"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553056807867-7">
+        <addForeignKeyConstraint baseColumnNames="size_unit_measure_code_id" baseTableName="products" constraintName="FK4jsxi4g0j7254chj6on5vi9mi" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="unit_measure"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553056807867-8">
+        <addForeignKeyConstraint baseColumnNames="weight_unit_measure_code_id" baseTableName="products" constraintName="FK93uehjp7ah7mcbj6oed90l6ms" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="unit_measure"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553056807867-9">
+        <addForeignKeyConstraint baseColumnNames="product_id" baseTableName="product_product_photo" constraintName="FKbiqp3kov3fsmrjgcf1i8m3kno" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="products"/>
+    </changeSet>
+    <changeSet author="thet.lwin (generated)" id="1553056807867-10">
+        <addForeignKeyConstraint baseColumnNames="product_model_id" baseTableName="products" constraintName="FKj5awf4r8jjko7waqsyrwo8ule" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="product_model"/>
+    </changeSet>
+</databaseChangeLog>

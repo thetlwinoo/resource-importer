@@ -1,0 +1,31 @@
+{
+    "name": "ProductSubCategory",
+    "fields": [
+        {
+            "fieldName": "productSubCategoryName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "productCategory",
+            "otherEntityName": "productCategory",
+            "otherEntityField": "id",
+            "otherEntityRelationshipName": "productSubCategory"
+        }
+    ],
+    "changelogDate": "20190320040215",
+    "entityTableName": "product_sub_category",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "importer",
+    "applications": "*",
+    "microserviceName": "importer"
+}

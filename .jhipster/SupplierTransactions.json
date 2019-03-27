@@ -1,0 +1,92 @@
+{
+    "name": "SupplierTransactions",
+    "fields": [
+        {
+            "fieldName": "supplierInvoiceNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "transactionDate",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "amountExcludingTax",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "taxAmount",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "transactionAmount",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "outstandingBalance",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "finalizationDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "isFinalized",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "supplier",
+            "otherEntityName": "suppliers",
+            "otherEntityField": "supplierName",
+            "otherEntityRelationshipName": "supplierTransactions"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "transactionType",
+            "otherEntityName": "transactionTypes",
+            "otherEntityField": "transactionTypeName",
+            "otherEntityRelationshipName": "supplierTransactions"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "purchaseOrder",
+            "otherEntityName": "purchaseOrders",
+            "otherEntityField": "id",
+            "otherEntityRelationshipName": "supplierTransactions"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "paymentMethod",
+            "otherEntityName": "paymentMethods",
+            "otherEntityField": "paymentMethodName",
+            "otherEntityRelationshipName": "supplierTransactions"
+        }
+    ],
+    "changelogDate": "20190320040155",
+    "entityTableName": "supplier_transactions",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "importer",
+    "applications": "*",
+    "microserviceName": "importer"
+}

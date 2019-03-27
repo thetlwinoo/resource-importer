@@ -1,0 +1,68 @@
+{
+    "name": "PurchaseOrders",
+    "fields": [
+        {
+            "fieldName": "orderDate",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "expectedDeliveryDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "supplierReference",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "isOrderFinalized",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "comments",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "internalComments",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "contactPerson",
+            "otherEntityName": "people",
+            "otherEntityField": "fullName",
+            "otherEntityRelationshipName": "purchaseOrders"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "supplier",
+            "otherEntityName": "suppliers",
+            "otherEntityField": "supplierName",
+            "otherEntityRelationshipName": "purchaseOrders"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "deliveryMethod",
+            "otherEntityName": "deliveryMethods",
+            "otherEntityField": "deliveryMethodName",
+            "otherEntityRelationshipName": "purchaseOrders"
+        }
+    ],
+    "changelogDate": "20190320040156",
+    "entityTableName": "purchase_orders",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "importer",
+    "applications": "*",
+    "microserviceName": "importer"
+}

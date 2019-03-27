@@ -1,0 +1,93 @@
+{
+    "name": "Orders",
+    "fields": [
+        {
+            "fieldName": "orderDate",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "expectedDeliveryDate",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "customerPurchaseOrderNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "isUndersupplyBackordered",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "comments",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "deliveryInstructions",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "internalComments",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pickingCompletedWhen",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "pickedByPerson",
+            "otherEntityName": "people",
+            "otherEntityField": "fullName",
+            "otherEntityRelationshipName": "orders"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "contactPerson",
+            "otherEntityName": "people",
+            "otherEntityField": "fullName",
+            "otherEntityRelationshipName": "orders"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "salespersonPerson",
+            "otherEntityName": "people",
+            "otherEntityField": "fullName",
+            "otherEntityRelationshipName": "orders"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "customer",
+            "otherEntityName": "customers",
+            "otherEntityField": "customerName",
+            "otherEntityRelationshipName": "orders"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "backorderOrder",
+            "otherEntityName": "orders",
+            "otherEntityField": "id",
+            "otherEntityRelationshipName": "orders"
+        }
+    ],
+    "changelogDate": "20190320040205",
+    "entityTableName": "orders",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "importer",
+    "applications": "*",
+    "microserviceName": "importer"
+}
